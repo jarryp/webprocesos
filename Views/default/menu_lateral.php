@@ -15,7 +15,7 @@
                                 <a href="#">Maestros<span class="fa arrow"></span></a>
                                 <ul class="nav nav-third-level">
                                     <li>
-                                        <a href="#">Procesos</a>
+                                        <a href="<?php echo URL;?>Procesos/procesos"">Procesos</a>
                                     </li>
                                 </ul>
                             </li>

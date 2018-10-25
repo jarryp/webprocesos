@@ -26,5 +26,24 @@ class Procesos extends Controllers {
 		echo $this->model->listadoModel();
 	}
 
+	function create(){
+		$this->model->setNombre($_REQUEST['nombre']);
+		$this->model->setDescripcion($_REQUEST['descripcion']);
+		$this->model->setIdSede($_REQUEST['cmbsede']);
+		$this->model->setPresupuesto($_REQUEST['presupuesto']);
+		if($this->model->save()){
+			echo '<div class="alert alert-success alert-dismissable">
+  					<button type="button" class="close" data-dismiss="alert">&times;</button>
+  					<strong>Inclusión Satisfactoria</strong>
+				</div>';
+		}else{
+			echo '<div class="alert alert-danger alert-dismissable">
+  					<button type="button" class="close" data-dismiss="alert">&times;</button>
+  					<strong>Registro no agregado</strong>
+				</div>';	
+		}
+
+	}
+
 
 }
