@@ -2,6 +2,7 @@
 <?php 
 
 class Procesos_model extends Conexion {
+	private $tabla="procesos";
 	private $numero;
 	private $descripcion;
 	private $id_sede;
@@ -38,4 +39,17 @@ class Procesos_model extends Conexion {
 	function getPresupuesto(){
 		return $this->presupuesto;
 	}
+
+	function listadoModel(){
+		$query="select p.id_proceso ,
+       					p.nombre ,
+       					s.nombre as sede,
+       					p.presupuesto, 
+       					p.created_at
+				from procesos p 
+				left join sede s on s.id_sede = p.id_sede 
+				order by created_at desc ";
+		return json_encode($this->db->ejecutaSQL($query));
+	}
+
 }

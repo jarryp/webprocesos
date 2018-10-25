@@ -1,7 +1,8 @@
 
 <?php 
 
-class User_model extends Conexion {
+class Sede_model extends Conexion {
+	private $tabla="sede";
 	private $id_sede;
 	private $nombre;
 
@@ -20,4 +21,9 @@ class User_model extends Conexion {
 	function getNombre(){
 		return $this->nombre;
 	}
+
+	function listadoModel($fields,$orden){
+		return json_encode($this->db->select2($fields,$this->tabla,$orden));
+	}
+
 }

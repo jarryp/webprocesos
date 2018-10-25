@@ -66,6 +66,16 @@ Class QueryManager{
 		}
 	}
 
+	function ejecutaSQL($query){
+		$result = pg_query($query);
+		if(pg_num_rows($result) > 0){
+			while($row = pg_fetch_assoc($result)){
+				$response[] = $row;
+			}
+			return $response;	
+		}
+	}
+
 
 	function existe($tabla,$campo,$valor){
 		$query="select * from ".$tabla." where ".$campo."='".$valor."';";

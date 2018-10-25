@@ -22,5 +22,9 @@ class Procesos extends Controllers {
 		echo "Hola desde controlador de procesos";
 	}
 
+	function listado(){
+		echo $this->model->listadoModel();
+	}
+
 
 }
