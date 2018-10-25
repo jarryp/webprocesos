@@ -159,6 +159,7 @@
        document.getElementById("nombre").focus();
     }
 
+
     function envia_proceso(){
     	var xid          = $("#id").val();
     	var xnombre      = $("#nombre").val();
